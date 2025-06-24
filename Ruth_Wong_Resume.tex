@@ -1,0 +1,204 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Stylish Curriculum Vitae
+% LaTeX Template
+% Version 1.0 (18/7/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Stefano (http://stefano.italians.nl/)
+%
+% IMPORTANT: THIS TEMPLATE NEEDS TO BE COMPILED WITH XeLaTeX
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% The main font used in this template, EB Garamond
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \documentclass[letterpaper, oneside, final]{scrartcl} % Paper options using the scrartcl class
+
+\documentclass[letterpaper, oneside, final]{scrartcl} % Paper options using the scrartcl class
+\usepackage{scrlayer-scrpage} % Provides headers and footers configuration
+\usepackage{titlesec} % Allows creating custom \section's
+\usepackage{marvosym} % Allows the use of symbols
+\usepackage{tabularx,colortbl} % Advanced table configurations
+\usepackage{fontspec} % Allows font customization
+\usepackage{setspace}
+\usepackage[hidelinks]{hyperref}
+\defaultfontfeatures{Mapping=tex-text}
+\usepackage{fontspec}
+\setmainfont{EB Garamond} % Main document font
+\usepackage[margin=1.25in]{geometry}
+\usepackage{xcolor}
+\definecolor{mygray}{RGB}{230, 230, 230}
+
+\newfontfamily{\morespace}{EB Garamond}[
+  WordSpace={1, 1, 1}
+]
+
+
+\titleformat{\section}{\large\scshape\raggedright}{}{0em}{}[\titlerule] % Section formatting
+
+\pagestyle{scrheadings} % Print the headers and footers on all pages
+\clearpairofpagestyles
+
+\addtolength{\voffset}{-0.65in} % Adjust the vertical offset - less whitespace at the top of the page
+\addtolength{\textheight}{+3in} % Adjust the text height - less whitespace at the bottom of the page
+
+\newcommand{\gray}{\rowcolor[gray]{.90}} % Custom highlighting for the work experience and education sections
+
+\begin{document}
+
+
+\setlength{\pdfpagewidth}{8.5in}
+\setlength{\pdfpageheight}{11in}
+
+\begin{center} % Center everything in the document
+
+%----------------------------------------------------------------------------------------
+% ÊHEADER SECTION
+%----------------------------------------------------------------------------------------
+
+{\addfontfeature{LetterSpace=8.0}\fontsize{36}{36}\spaceskip=12pt\selectfont\scshape Ruth Grace Wong} % Your name at the top
+
+\vspace{1cm} % Extra whitespace after the large name at the top
+
+{\renewcommand{\headfont}{\normalfont\rmfamily\scshape} % Font settings for footer
+\addfontfeature{LetterSpace=10.0}\fontsize{12.5}{17}\selectfont\scshape % Letter spacing and font size
+
+San Francisco  {\large\textperiodcentered} ruthgracewong@gmail {\large\textperiodcentered} (628) 209 9005 {\large\textperiodcentered} \underline{\href{https://www.linkedin.com/in/ruthgracewong/}{LinkedIn}}
+}
+
+%----------------------------------------------------------------------------------------
+%	SKILLS & TALKS
+%----------------------------------------------------------------------------------------
+\vspace{0.2cm}
+
+\begin{flushleft}
+\begin{tabular}{ll}
+     Languages / Tools & Python, Go, Bash, Amazon Web Services, Docker\\
+     Talks & \underline{\href{https://www.usenix.org/conference/srecon18americas/presentation/wong}{Containerization War Stories}} (SREcon), \underline{\href{https://2017.pycon.ca/en/schedule/60/}{Flamegraph that!}} (PyCon Canada)\\
+    & \underline{\href{https://hackaday.com/2019/02/22/supercon-ruth-grace-wong-and-firmware-from-the-firehose/}{Firmware from the Firehose}} and \underline{\href{https://hackaday.com/2020/01/03/you-could-be-a-manufacturing-engineer-if-you-could-only-find-the-time/}{Mfg Engineering in Your Spare Time}} (Hackaday) \\
+\end{tabular}
+\end{flushleft}
+
+%----------------------------------------------------------------------------------------
+%	EMPLOYMENT
+%----------------------------------------------------------------------------------------
+
+\section{Experience}
+
+\renewcommand{\arraystretch}{1.3}
+\begingroup\setlength{\fboxsep}{0pt}
+\colorbox{mygray}{
+\begin{flushleft}
+\begin{tabularx}{\textwidth}{l}
+\textbf{Senior Software Engineer -} \textit{Tech lead for server configuration, Pinterest Cloud Architecture Team}\\
+January 2022 to June 2024\\
+\end{tabularx}
+\end{flushleft}
+}\endgroup
+\vspace{-0.1cm}
+\begin{itemize} \itemsep-0.2cm
+
+
+\item[$\cdot$] Led technical strategy for server configuration at Pinterest, including writing road maps and advising teams on upgrades, best practices, and contingency planning.\\[10pt]
+\item[$\cdot$] Increased reliability and saved costs by compressing server configs, running Puppet via Go binary, automating serverspec testing and instance launch testing, and rolling out per-cluster alerting.\\[10pt]
+\item[$\cdot$] Upgraded OS on 100K+ servers via tech guidance \& hands-on support for company-wide initiative.\\[10pt]
+\item[$\cdot$] Improved developer velocity by speeding up Puppet Rspec testing by 4x via module parallelization.\\[10pt]
+
+
+\end{itemize}
+
+
+\begingroup\setlength{\fboxsep}{0pt}
+\colorbox{mygray}{
+\begin{flushleft}
+\begin{tabularx}{\textwidth}{l}
+\textbf{Site Reliability Engineer -} \textit{Pinterest Core SRE Team}\\
+July 2016 to December 2021\\
+\end{tabularx}
+\end{flushleft}
+}\endgroup
+\vspace{-0.1cm}
+\begin{itemize} \itemsep-0.2cm
+\item[$\cdot$] Prototyped automatic machine upgrades (Python, Spinnaker, AWS) \underline{\href{https://www.usenix.org/conference/srecon19asia/presentation/menezes}{Showcased at SREcon19 Asia}}\\[10pt]
+
+\item[$\cdot$] Wrote Flamegraph profiling for Python applications, automatic domain creation, dashboard improving incident response by 10 mins. Sped up and added search for image query tool.\\[10pt]
+\item[$\cdot$] Set up \underline{\href{https://medium.com/pinterest-engineering/building-a-python-monorepo-for-fast-reliable-development-be763781f67}{Python monorepo}} (Docker, Jenkins, Artifactory). New service deploy sped up 7x.\\[10pt]
+\item[$\cdot$] Supported 1000+ requests from engineers. Made self-serve tools \& docs for common requests.\\[10pt]
+\item[$\cdot$] On call for Pinterest uptime. Ack'd 500+ pages, often debugging unfamiliar services.\\[10pt]
+\item[$\cdot$] Ran infra orientation for new engineers 2017-2018, internal educative panels, SRE book club. Contributed to 200+ internal wiki articles. Trained 10 engineers for on call. Managed contractors.\\[10pt]
+
+\end{itemize}
+
+\begingroup\setlength{\fboxsep}{0pt}
+\colorbox{mygray}{
+\begin{flushleft}
+\begin{tabularx}{\textwidth}{l}
+\textbf{Part Time Manufacturing Engineer -} \textit{Aqua Design Innovations}\\
+August 2018 to August 2019\\
+\end{tabularx}
+\end{flushleft}
+}\endgroup
+\vspace{-0.1cm}
+\begin{itemize} \itemsep-0.2cm
+\item[$\cdot$] Managed factories, contractors, and vendors to maintain a 5-product line of aquaponic products. \\
+\item[$\cdot$] CAD (Fusion 360), testing, and prototyping for product development.\\
+\end{itemize}
+
+\begingroup\setlength{\fboxsep}{0pt}
+\colorbox{mygray}{
+\begin{flushleft}
+\begin{tabularx}{\textwidth}{l}
+\textbf{Site Reliability Engineer Intern -} \textit{Google Persistent Disk team}\\
+May 2015 - August 2015\\
+\end{tabularx}
+\end{flushleft}
+}\endgroup
+\vspace{-0.1cm}
+\begin{itemize} \itemsep-0.2cm
+\item[$\cdot$] Implemented early detection system for compaction failures in cloud storage segments\\
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+%	PROJECTS
+%----------------------------------------------------------------------------------------
+	
+\vspace{-0.5cm}
+
+\section{Research, writing, consulting}
+\begin{onehalfspacing} \setstretch{0.4}
+\begin{flushleft}
+\begin{tabularx}{\textwidth}{ll}
+\textbf{\hyperref{https://github.com/ruthgrace/msc_thesis_2016/blob/master/westernthesis.pdf}{}{}{Masters Thesis}} & Formulated \underline{\href{https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0161196}{new ways to calculate differences between human microbiomes}}.\\
+\\
+\textbf{Technical writing} & For \underline{\href{https://www.scopeofwork.net/author/ruth/}{Scope of Work}} and \underline{\href{https://medium.com/@ruthgracewong/list/supplyframe-hardware-articles-by-ruth-grace-wong-0191c95f26b1}{SupplyFrame Hardware}}, mostly about manufacturing\\
+\\
+\textbf{Technical consulting} & Cybersecurity recommendations for FDA compliance for \underline{\href{https://pathologywatch.com/}{PathologyWatch}}\\
+\end{tabularx}
+\end{flushleft}
+\end{onehalfspacing}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+
+% \vspace{-0.5cm}
+
+% \section{Education}
+% \begin{onehalfspacing} \setstretch{0.8}
+% \begin{tabularx}{\textwidth}{ll}
+% \tesxtbf{MSc 2016, BSc 2014} & Computational Biochemistry, University of Western Ontario\\
+% & ACM programming contestant 2010-2013\\
+% \end{tabularx}
+% \end{onehalfspacing}
+
+%----------------------------------------------------------------------------------------
+
+
+
+
+\end{center}
+\end{document}
